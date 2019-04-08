@@ -105,7 +105,36 @@ const playRound = () => {
     let seconds = 0;
 
     const secondsGoUp = () => {
+        
+
+        if (seconds === 0) {
+            const removeCount = () => {
+                $('.count').remove();
+            };
+
+            const countdown3 = () => {
+                $('.arena').append('<div class="count"><img src="images/number3.png"></div>');
+                setTimeout(removeCount, 750);                
+            }
+            countdown3();
+
+            const countdown2 = () => {
+                $('.arena').append('<div class="count"><img src="images/number2.png"></div>');
+                setTimeout(removeCount, 750); 
+            }
+
+            setTimeout(countdown2, 1000);
+
+            const countdown1 = () => {
+                $('.arena').append('<div class="count"><img src="images/number1.png"></div>');
+                setTimeout(removeCount, 750); 
+            }
+            setTimeout(countdown1, 2000);            
+            
+        }
+
         seconds++;
+
         if(seconds % 3 === 0){
             $('.arena').append(`<img id="${aliveIncs[0].name}" class="bird" src="${aliveIncs[0].imgFile}">`);
             
@@ -175,7 +204,7 @@ const playRound = () => {
                 playRound();
                 }
 
-                setTimeout(clearRound, 4000)
+                setTimeout(clearRound, 3000)
             }
         };
         
