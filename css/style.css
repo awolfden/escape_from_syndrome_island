@@ -152,15 +152,9 @@ h3 {
 
 .youlose {
     position: relative;
-    top: 130px; 
+    top: 0px;
+    left: 800px; 
 
-}
-
-.youwin {
-    /* position: relative;
-    right: 600px; */
-    
-    
 }
 
 .count img{
