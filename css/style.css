@@ -157,6 +157,11 @@ h3 {
 
 }
 
+.youwin {
+    position: relative;
+    top: 11px;
+}
+
 .count img{
     width: 200px;
     height: 200px;
