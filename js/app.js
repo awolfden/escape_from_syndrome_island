@@ -59,7 +59,7 @@ const functions = {
         functions.makeStats();
     },
     makeIncredibles(){
-        const incNames = [{'name': 'Mr_Incredible', 'imgFile':'images/mrincredible-inc.png', 'imgFile2':'images/mrincredible-inc.png'}, {'name': 'Elastagirl', 'imgFile':'images/elastigirl-inc.png', 'imgFile2':'images/elastigirl-inc.png'}, {'name': 'Violet', 'imgFile':'images/violet-inc.png', 'imgFile2':'images/violet-inc.png'}, {'name': 'Dash', 'imgFile':'images/dash-inc.png', 'imgFile2':'images/dashRight-inc.png'}, {'name': 'Jack-Jack', 'imgFile':'images/jackjack-inc.png', 'imgFile2':'images/jackjack-inc.png'}];
+        const incNames = [{'name': 'Mr_Incredible', 'imgFile':'images/mrincredible-inc.png'}, {'name': 'Elastagirl', 'imgFile':'images/elastigirl-inc.png'}, {'name': 'Violet', 'imgFile':'images/violet-inc.png'}, {'name': 'Dash', 'imgFile':'images/dash-inc.png'}, {'name': 'Jack-Jack', 'imgFile':'images/jackjack-inc.png'}];
         for (let i = 0; i < incNames.length; i++){
             incFactory.makeIncredible(incNames[i].name, incNames[i].imgFile);
             functions.refreshStats();
@@ -144,6 +144,7 @@ const playRound = () => {
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '-400', '200', '300', '256');
                 
             } else if (aliveIncs[0].name === 'Violet'){
+                $(`#${aliveIncs[0].name}`).attr('src', 'images/violet-inc.gif');
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '100', '-200', '100', '100');
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '100', '200', '125', '125');
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '250', '200', '200', '200');
@@ -161,15 +162,15 @@ const playRound = () => {
             } else if (aliveIncs[0].name === 'Jack-Jack'){
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '200', '-100', '100', '100');
                 setTimeout(()=>{
-                    jackMorph('images/jackjack-lasers.png')
+                    jackMorph('images/jackjack-devil.png')
                 }, 1001);
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '200', '300', '155', '175');
                 setTimeout(()=>{
-                    jackMorph('images/jackjack-devil.png')
+                    jackMorph('images/jackjack-fire.png')
                 }, 2001);
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '150', '-500', '190', '165');
                 setTimeout(()=>{
-                    jackMorph('images/jackjack-fire.png')
+                    jackMorph('images/jackjack-lasers.png')
                 }, 3001);
                 functions.incredibleGo(`#${aliveIncs[0].name}`, '-400', '-600', '310', '280');
             };
@@ -252,7 +253,6 @@ const playRound = () => {
                 functions.refreshStats();
             }
         }
-
     })
 
     // Reload Button
